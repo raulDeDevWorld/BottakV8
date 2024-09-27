@@ -49,7 +49,10 @@ export default function App({ placeholder, value, onChange, propHandlerSelect, p
   return (
     <div className={`relative flex justify-between w-[100%] sm:max-w-[350px]  focus:ring-blue-500 focus:border-blue-500  p-0 `} >
       <div className='relative flex w-[85%] justify-between items-center bg-transparent border border-gray-300 text-gray-900 text-[14px] rounded-xl'>
-        <input type="number" className='p-3 bg-transparent w-[65%] text-white text-center' step=".01" onChange={handlerOnChange} placeholder={placeholder} value={value && divisas && divisas[select] && divisas[select2] && (transferencia * divisas[select2].venta / divisas[select].venta).toFixed(2)} defaultValue={defaultValue} required />
+        <input type="number" className='p-3 bg-transparent w-[65%] text-white text-center' step=".01" onChange={handlerOnChange}
+          placeholder={placeholder}
+          value={value && divisas && divisas[select] && divisas[select2] && (transferencia * divisas[select2].compra / divisas[select].venta).toFixed(2)}
+          defaultValue={defaultValue} required />
         <span className=" w-[15%] text-gray-100 p-3 " onClick={(e) => handlerIsSelect(e)}>{propSelect}</span>
         {/* <span className='w-[auto] flex items.center rounded-[20px] '><CurrencyFlag currency={propSelect} size="xl" /></span> */}
         <span className={propIsSelect ? 'text-white text-center w-[10%] right-5 rotate-[270deg] p-3 ' : 'text-white text-center w-[10%] right-5 rotate-90 p-3 '} onClick={(e) => handlerIsSelect(e)}>{'>'}</span>
